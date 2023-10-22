@@ -15,8 +15,8 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def save(self):
         account = Account (email=self.validated_data['email'],fullname=self.validated_data['fullname'])
-        password = self.validated_data['password']    
-        password2 = self.validated_data['password2'] 
+        password = self.validated_data['password']
+        password2 = self.validated_data['password2']
 
         #Add validations before saving
         if password != password2:
