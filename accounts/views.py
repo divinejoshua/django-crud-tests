@@ -9,25 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 
 
 from . import serializers
-from .models import Account,SocialLogin,UserOtp
-
 #For authentication
-from django.contrib.auth import authenticate,logout
-
-#For gmail login
-from django.contrib.auth.decorators import login_required
-
-#For email verification
-from rest_framework.decorators import api_view, permission_classes
-from django.contrib.sites.shortcuts import get_current_site
-from django.template.loader import render_to_string
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.utils.encoding import force_bytes, force_str
-from .tokens import account_activation_token
-from django.core.mail import EmailMessage
-from django.conf import settings
-from django.core.mail import send_mail
-
 
 # Create your views here.
 class user_view(APIView):

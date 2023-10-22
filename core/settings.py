@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'accounts.Account'
+
 
 # Application definition
 
@@ -40,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',       # Swagger
     'drf_yasg',                   # Yet Another Swagger generator
-    'auth',
+    'accounts',
     'postapp',
 ]
 
