@@ -1,7 +1,6 @@
 from django.core.mail import message
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-import uuid 
 
 class MyAccountManager(BaseUserManager):
 	def create_user(self, email, password=None):
