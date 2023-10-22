@@ -38,17 +38,17 @@ class BlogDetail(APIView):
     """
     Blog detail
     """
-    def get(self, request, format=None):
+    def get(self, request, blogId, format=None):
         context = {}
         context['message'] = "GET blog post"
         return Response(context,  status=status.HTTP_200_OK)
 
-    def put(self, request, format=None):
+    def put(self, request, blogId, format=None):
         context = {}
         context['message'] = "UPDATE blog post"
         return Response(context,  status=status.HTTP_200_OK)
 
-    def delete(self, request, format=None):
+    def delete(self, request, blogId, format=None):
         context = {}
         context['message'] = "DELETE blog post"
         return Response(context,  status=status.HTTP_200_OK)
