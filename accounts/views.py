@@ -36,10 +36,14 @@ class user_view(APIView):
 #Register users
 class register_view(APIView):
     def post(self, request):
-        data = {} 
+        data = {}
+        statusCode = ""
         serializer = serializers.RegisterSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            data['message'] = "Account created successfully"
+            statusCode = status.HTTP_200_OK
         else:
             data = serializer.errors
-        return Response(data, status=status.HTTP_201_CREATED)
+            statusCode = status.HTTP_400_BAD_REQUEST
+        return Response(data, status=statusCode)
