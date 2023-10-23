@@ -10,7 +10,7 @@ class CreateBlogPostSerializer(serializers.ModelSerializer):
         blogpost = BlogPost (title=self.validated_data['title'])
         title = self.validated_data['title']
 
-        #Add validations before saving
+        # Add validations before saving
         if (len(title) >20):                                                                                                             #Make sure that fullname is not more than 50
             raise serializers.ValidationError({'title' : 'Title cannot be more than 20 characters.'})
 
